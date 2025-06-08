@@ -1,24 +1,146 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Progetto Semplice</title>
-  <link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>La Tenuta dei Venti</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css" rel="stylesheet" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox.min.js"></script>
+  <style>
+    html { scroll-behavior: smooth; }
+    .scroll-container {
+      display: flex;
+      overflow-x: auto;
+      gap: 1rem;
+      padding-bottom: 1rem;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+    }
+    .scroll-container::-webkit-scrollbar { display: none; }
+    .scroll-container img {
+      width: 250px;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 0.75rem;
+    }
+  </style>
 </head>
-<body>
-  <header>
-    <h1>Benvenuto al mio sito</h1>
-  </header>
+<body class="m-0 p-0 bg-gray-50 text-gray-800">
 
-  <main>
-    <section>
-      <p>Questa è una semplice pagina web.</p>
-      <button id="clickBtn">Cliccami</button>
-      <p id="message"></p>
-    </section>
-  </main>
+  <!-- Hero -->
+  <section class="relative h-screen bg-cover bg-center" style="background-image: url('img/home.jpg');">
+    <div class="absolute inset-0 bg-black bg-opacity-50 flex flex-col items-center justify-center text-center px-4">
+      <h1 class="text-white text-4xl font-bold mb-4">La Tenuta dei Venti</h1>
+      <p class="text-white text-lg mb-6">Il tuo rifugio nella natura</p>
+      <a href="#camere" class="bg-white text-gray-800 px-6 py-2 rounded-full font-semibold hover:bg-gray-200 transition">
+        Scopri le camere
+      </a>
+    </div>
+  </section>
 
-  <script src="js/script.js"></script>
+  <!-- Camere -->
+  <section id="camere" class="p-8 bg-white">
+    <h2 class="text-3xl font-bold mb-6 text-center">Le Nostre Camere</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+      <!-- Camera Scirocco -->
+      <div class="bg-white p-4 rounded shadow">
+        <h3 class="font-bold text-lg mb-2">Camera Scirocco</h3>
+        <div class="flex overflow-x-auto gap-2 mb-2">
+          <a href="img/scirocco1.jpg" data-lightbox="scirocco"><img src="img/scirocco1.jpg" alt="" class="w-60 h-40 object-cover rounded" /></a>
+          <a href="img/scirocco2.jpg" data-lightbox="scirocco"><img src="img/scirocco2.jpg" alt="" class="w-60 h-40 object-cover rounded" /></a>
+          <a href="img/scirocco3.jpg" data-lightbox="scirocco"><img src="img/scirocco3.jpg" alt="" class="w-60 h-40 object-cover rounded" /></a>
+        </div>
+        <p>Camera luminosa con vista giardino e bagno privato.</p>
+      </div>
+
+      <!-- Camera Libeccio -->
+      <div class="bg-white p-4 rounded shadow">
+        <h3 class="font-bold text-lg mb-2">Camera Libeccio</h3>
+        <div class="flex overflow-x-auto gap-2 mb-2">
+          <a href="img/libeccio1.jpg" data-lightbox="libeccio"><img src="img/libeccio1.jpg" class="w-60 h-40 object-cover rounded" /></a>
+          <a href="img/libeccio2.jpg" data-lightbox="libeccio"><img src="img/libeccio2.jpg" class="w-60 h-40 object-cover rounded" /></a>
+          <a href="img/libeccio3.jpg" data-lightbox="libeccio"><img src="img/libeccio3.jpg" class="w-60 h-40 object-cover rounded" /></a>
+        </div>
+        <p>Atmosfera rustica, colori rilassanti e comfort totale.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Cucina -->
+  <section class="bg-white p-8">
+    <h2 class="text-3xl font-bold mb-4 text-center">La Cucina</h2>
+    <div class="max-w-3xl mx-auto text-center">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+        <a href="img/cucina1.jpg" data-lightbox="cucina"><img src="img/cucina1.jpg" class="rounded-lg" /></a>
+        <a href="img/cucina2.jpg" data-lightbox="cucina"><img src="img/cucina2.jpg" class="rounded-lg" /></a>
+        <a href="img/cucina3.jpg" data-lightbox="cucina"><img src="img/cucina3.jpg" class="rounded-lg" /></a>
+        <a href="img/cucina4.jpg" data-lightbox="cucina"><img src="img/cucina4.jpg" class="rounded-lg" /></a>
+      </div>
+      <p>Ogni mattina colazioni genuine con prodotti locali. Disponibili opzioni vegetariane e senza glutine.</p>
+    </div>
+  </section>
+
+  <!-- Spazio Esterno -->
+  <section class="py-16 bg-green-50">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl font-bold text-center text-green-800 mb-12">Spazio Esterno</h2>
+      <div class="scroll-container">
+        <a href="img/giardino1.jpg" data-lightbox="giardino"><img src="img/giardino1.jpg" /></a>
+        <a href="img/giardino2.jpg" data-lightbox="giardino"><img src="img/giardino2.jpg" /></a>
+        <a href="img/giardino3.jpg" data-lightbox="giardino"><img src="img/giardino3.jpg" /></a>
+        <a href="img/giardino4.jpg" data-lightbox="giardino"><img src="img/giardino4.jpg" /></a>
+      </div>
+      <div class="mt-8 max-w-3xl mx-auto text-center">
+        <p class="text-lg text-gray-700">
+          Un angolo di pace immerso nel verde con amache, zona barbecue e tavoli per mangiare all'aperto.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Piscina -->
+  <section class="bg-blue-50 p-8">
+    <h2 class="text-3xl font-bold mb-4 text-center">La Piscina</h2>
+    <div class="max-w-3xl mx-auto text-center">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+        <a href="img/piscina1.jpg" data-lightbox="piscina"><img src="img/piscina1.jpg" class="rounded-lg" /></a>
+        <a href="img/piscina2.jpg" data-lightbox="piscina"><img src="img/piscina2.jpg" class="rounded-lg" /></a>
+      </div>
+      <p>Rinfrescati nella nostra piscina immersa nel verde, con lettini e ombrelloni.</p>
+    </div>
+  </section>
+
+  <!-- Recensioni -->
+  <section class="bg-white p-8">
+    <h2 class="text-3xl font-bold text-center mb-6">Cosa dicono di noi</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div class="bg-gray-100 p-4 rounded shadow">
+        <p>“Un'esperienza indimenticabile. Camere pulite, colazione deliziosa e tanta pace!”</p>
+        <p class="mt-2 font-semibold">– Maria, Roma</p>
+      </div>
+      <div class="bg-gray-100 p-4 rounded shadow">
+        <p>“La piscina è fantastica e il giardino davvero ben curato. Torneremo sicuramente.”</p>
+        <p class="mt-2 font-semibold">– Luca, Milano</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Prenotazione -->
+  <section class="p-8 bg-gray-100">
+    <h2 class="text-3xl font-bold text-center mb-4">Prenota Ora</h2>
+    <form class="max-w-xl mx-auto bg-white p-6 rounded shadow space-y-4">
+      <input type="text" placeholder="Nome" class="w-full border p-2 rounded" required />
+      <input type="email" placeholder="Email" class="w-full border p-2 rounded" required />
+      <input type="date" class="w-full border p-2 rounded" required />
+      <textarea placeholder="Messaggio" class="w-full border p-2 rounded"></textarea>
+      <button type="submit" class="w-full bg-blue-500 text-white p-2 rounded hover:bg-blue-600">Invia Richiesta</button>
+    </form>
+  </section>
+
 </body>
 </html>
+
+
